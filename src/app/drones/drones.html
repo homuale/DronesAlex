@@ -1,0 +1,18 @@
+<h1>Gestión de Drones</h1>
+<p class="text-muted">Consulta los drones registrados en DroneAlex.</p>
+
+<div class="row g-4">
+  <div class="col-md-4" *ngFor="let drone of drones">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <h3>{{ drone.nombre | uppercase }}</h3>
+        <hr />
+        <p><b>Código:</b> {{ drone.codigo }}</p>
+        <p><b>Batería:</b> {{ drone.bateria }}%</p>
+        <p><b>Autonomía:</b> {{ drone.autonomia }} minutos</p>
+        <p><b>Valor:</b> {{ drone.valor | currency:'PEN':'symbol' }}</p>
+        <p><b>Estado:</b> {{ drone.estado | uppercase }}</p>
+      </div>
+    </div>
+  </div>
+</div>

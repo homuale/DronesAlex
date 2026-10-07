@@ -1,0 +1,22 @@
+<h1>Misiones</h1>
+
+<table class="table table-striped shadow-sm">
+  <thead class="table-dark">
+    <tr>
+      <th>Código</th>
+      <th>Misión</th>
+      <th>Drone</th>
+      <th>Fecha</th>
+      <th>Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let m of misiones">
+      <td>{{ m.codigo }}</td>
+      <td>{{ m.nombre | titlecase }}</td>
+      <td>{{ m.drone | uppercase }}</td>
+      <td>{{ m.fecha | date:'dd/MM/yyyy' }}</td>
+      <td>{{ m.estado | uppercase }}</td>
+    </tr>
+  </tbody>
+</table>

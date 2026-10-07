@@ -1,0 +1,26 @@
+<h1>Historial de Misiones</h1>
+
+<table class="table table-hover shadow-sm">
+  <thead class="table-dark">
+    <tr>
+      <th>Código</th>
+      <th>Misión</th>
+      <th>Drone</th>
+      <th>Fecha</th>
+      <th>Distancia</th>
+      <th>Duración</th>
+      <th>Resultado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let h of historial">
+      <td>{{ h.codigo }}</td>
+      <td>{{ h.mision | titlecase }}</td>
+      <td>{{ h.drone | uppercase }}</td>
+      <td>{{ h.fecha | date:'dd/MM/yyyy' }}</td>
+      <td>{{ h.distancia }} km</td>
+      <td>{{ h.duracion }} min</td>
+      <td>{{ h.resultado | uppercase }}</td>
+    </tr>
+  </tbody>
+</table>

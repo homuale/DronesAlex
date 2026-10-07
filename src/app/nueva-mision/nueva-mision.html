@@ -1,0 +1,113 @@
+<h1>Nueva Misión</h1>
+<p class="text-muted">Registra una nueva operación para los drones.</p>
+
+<form #formMision="ngForm" (ngSubmit)="registrar()" class="card p-4 shadow-sm">
+  <div class="row g-3">
+    <div class="col-md-6">
+      <label class="form-label">Nombre de la misión</label>
+      <input
+        class="form-control"
+        name="nombre"
+        [(ngModel)]="mision.nombre"
+        required
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Drone</label>
+      <select
+        class="form-select"
+        name="drone"
+        [(ngModel)]="mision.drone"
+        required
+      >
+        <option value="">Seleccione un drone</option>
+        <option>Falcon X1</option>
+        <option>Sky Explorer</option>
+        <option>Eagle Pro</option>
+      </select>
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Piloto</label>
+      <input
+        class="form-control"
+        name="piloto"
+        [(ngModel)]="mision.piloto"
+        required
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Tipo de misión</label>
+      <select
+        class="form-select"
+        name="tipo"
+        [(ngModel)]="mision.tipo"
+        required
+      >
+        <option value="">Seleccione</option>
+        <option>Inspección</option>
+        <option>Monitoreo</option>
+        <option>Fotografía</option>
+      </select>
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Fecha</label>
+      <input
+        type="date"
+        class="form-control"
+        name="fecha"
+        [(ngModel)]="mision.fecha"
+        required
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Hora</label>
+      <input
+        type="time"
+        class="form-control"
+        name="hora"
+        [(ngModel)]="mision.hora"
+        required
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Duración estimada (minutos)</label>
+      <input
+        type="number"
+        class="form-control"
+        name="duracion"
+        [(ngModel)]="mision.duracion"
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Distancia estimada (km)</label>
+      <input
+        type="number"
+        class="form-control"
+        name="distancia"
+        [(ngModel)]="mision.distancia"
+      />
+    </div>
+
+    <div class="col-12">
+      <label class="form-label">Observaciones</label>
+      <textarea
+        class="form-control"
+        name="observaciones"
+        [(ngModel)]="mision.observaciones"
+      ></textarea>
+    </div>
+
+    <div class="col-12">
+      <button class="btn btn-dark" [disabled]="formMision.invalid">
+        Registrar misión
+      </button>
+    </div>
+  </div>
+</form>
